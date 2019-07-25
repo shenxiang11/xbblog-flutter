@@ -59,7 +59,7 @@ class _BlogListState extends State<BlogList> with AutomaticKeepAliveClientMixin 
   Future getArticles(page) async {
     try {
       var data = { 'pageSize': 10, 'category': widget.category, 'currentPage': page };
-      Response response = await Dio().get('https://m.sweetsmartstrongshen.cc/api/article/list/client', queryParameters: data);
+      Response response = await Dio().get('https://www.sweetsmartstrongshen.cc/api/article/list/client', queryParameters: data);
       return response.data;
     } catch(e) {
       return print(e);
@@ -94,6 +94,7 @@ class _BlogListState extends State<BlogList> with AutomaticKeepAliveClientMixin 
         return _onRefresh();
       },
       child: SingleChildScrollView(
+        controller: _scrollController,
         child:Container(
           margin: EdgeInsets.fromLTRB(0, ScreenUtil().setWidth(10), 0, 0),
           child: Column(

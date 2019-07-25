@@ -78,7 +78,7 @@ class _BlogDetailState extends State<BlogDetail> {
 
   Future getArticleDetail(_id) async {
     try {
-      Response response = await Dio().get('https://m.sweetsmartstrongshen.cc/api/article/client/$_id');
+      Response response = await Dio().get('https://www.sweetsmartstrongshen.cc/api/article/client/$_id');
       return response.data;
     } catch(e) {
       return print(e);
